@@ -52,7 +52,7 @@ for i in network_device_json.json()['response']:
           for i in json_RecID['value']:
               ivnt_ci_RecId = (i['RecId'])
               
-          #ivnt_ci_mod_url = "https://becn-stg.saasit.com/api/odata/businessobject/CIs('" + ivnt_ci_RecId + "')"
+
           ivnt_ci_mod_url = "https://tenant.saasit.com/api/odata/businessobject/CI__ivnt_infrastructures('" + ivnt_ci_RecId + "')"
           body_response = str('{"IPAddress":' + '"' +  device_managementIpAddress + '","SerialNumber":' + '"' + device_serial_number + '","Name":' + '"' + device_host_name + '"' + "}")
           update_existing_CI = requests.put(url=ivnt_ci_mod_url, data= body_response, headers=iv_auth_header)
@@ -60,7 +60,6 @@ for i in network_device_json.json()['response']:
           
     else: 
         print("No 200 or 204 error please look at transcript.") #error handles, log will show failed json.
-        #ivnt_get_phone = "https://becn-stg.saasit.com/api/odata/businessobject/CIs?$search=" + device_serial_number
         ivnt_get_phone = "https://tenant.saasit.com/api/odata/businessobject/CI__ivnt_infrastructures?$search=" + device_serial_number
         request_ivnt_phone_exists = requests.get(url = ivnt_get_phone, headers=iv_auth_header)
         text_CSV =  request_ivnt_phone_exists.text
