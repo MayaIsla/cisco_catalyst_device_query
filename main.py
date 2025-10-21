@@ -19,7 +19,7 @@ parsed_auth_key_text = parsed_auth_key_json["Token"]
 catalyst_headers = {'X-Auth-Token': parsed_auth_key_text}
 device_auth_uri = 'https://server.local/dna/intent/api/v1/network-device'
 
-api_uri = "https://tenant.saasit.com/api/odata/businessobject/CI_ivnt_infrastructures" #Cannot use the CI business rule -_-
+api_uri = "https://tenant.saasit.com/api/odata/businessobject/CI_ivnt_infrastructures" #Cannot use the CI business object due to misconfiguration of the newer tenant. -_-
 iv_auth_header = {'Authorization': ivnt_api__Key}
 
 
